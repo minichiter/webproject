@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock title %}
-
 {% block content %}
-    <h1>سلام دنیا!</h1>
-    <p>این صفحه‌ی اصلیه.</p>
-{% endblock content %}
+  <ul>
+    {% for message in message_list %}
+      <li>{{ message.text }}</li>
+    {% empty %}
+      <li>هیچ پیامی وجود ندارد.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
